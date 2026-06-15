@@ -8,9 +8,21 @@ public class Room {
    
    public Room() {
       // TODO: Generate a random number of monsters and items between 1 and max (inclusive)
+      int m = (int)(Math.random() * maxNumberOfMonsters) + 1;
+      int i = (int)(Math.random() * maxNumberOfItems) + 1;
       
       // TODO: Create the ArrayLists to hold the Items and Monsters in the Room and populate them with Monsters and Items
+      itemsInRoom = new ArrayList<Item>();
+      monstersInRoom = new ArrayList<Monster>();
       
+      for(int x = 0; x < i; x++)
+      {
+         itemsInRoom.add(new Item());
+   }
+      
+      for(int x = 0; x < m; x++){
+         monstersInRoom.add(new Monster());
+   }
    }
    
    public String toString() {
@@ -18,6 +30,17 @@ public class Room {
 
       // TODO: build a returnString that nicely formats the Monsters and Items in the Room
       // HINT: Use a for-each loop to go through the ArrayLists
+      
+      for(Item it : itemsInRoom){
+         returnString += it + " ";
+      }
+      
+      returnString += "\nMonsters in room: ";
+      
+      for(Monster m : monstersInRoom){
+         returnString += m + " ";
+      }
+      
       return returnString;
    }
 

@@ -1,5 +1,5 @@
 public class Item {
-   private String itemType;
+private String itemType;
    private boolean isEquipped;
    private final String[] itemTypes = {
             "Rusty Sword",
@@ -26,13 +26,17 @@ public class Item {
 
    public Item() {
       // TODO: Pick a random item type from itemTypes
+      int RD = (int)(Math.random() * itemTypes.length);
+      itemType = itemTypes[RD];
+      isEquipped = false;
    }
    
    public String getItemType() {
-      return this.itemType;
+   return this.itemType;
    }
    
    public String toString() {
-      // TODO: Build a descriptive String for use by other methods
+   // TODO: Build a descriptive String for use by other methods
+   return "Item: " + itemType;
    }
 }
